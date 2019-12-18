@@ -9,7 +9,9 @@
 import ContactsForm from '@/components/ContactsForm'
 
 export default {
+
   name: 'home',
+
   components: {
     ContactsForm
   }
