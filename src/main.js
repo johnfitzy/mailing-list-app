@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-// import BootstrapVue from 'bootstrap-vue'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || 'Bands email list app';
