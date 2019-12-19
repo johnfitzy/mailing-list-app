@@ -9,12 +9,35 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-
+/*eslint no-console: ["error", { allow: ["debug"] }] */
 Vue.config.productionTip = false
-// Vue.use(BootstrapVue)
+
+var store = {
+  state: {
+    message: 'Data from store'
+  }, 
+
+  setMessageAction(newValue) {
+    console.debug('This message was called')
+    this.state.message = newValue;
+  }, 
+
+  clearMessageAction() {
+    this.state.message = '';
+  }
+}
 
 new Vue({
+
   el: '#app',
+
   router,
+
+  data: {
+    privateVueState: "Private vue state, other vue's can't access it", 
+    sharedState: store
+  },
+
   render: h => h(App)
+
 }).$mount('#app')
